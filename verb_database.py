@@ -1,4 +1,8 @@
+"""creates a list of dictionaries"""
+
 import csv
+
+verbs = []
 
 # Open the CSV file
 with open('German_verbs.csv', newline='') as csvfile:
@@ -10,10 +14,13 @@ with open('German_verbs.csv', newline='') as csvfile:
     for row in csvreader:
 
         # Process the row as a dictionary
-        verbs = {
+        dict = {
             'verb': row['verb'],
             'p': row['p'],
             'pp': row['pp'],
             'English': row['English']
         }
 
+        # Do something with the dictionary
+        verbs.append(dict)
+        print(verbs)
