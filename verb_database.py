@@ -1,24 +1,31 @@
 """creates a list of dictionaries"""
 
-import csv
-
 verbs = []
 
-# Open the CSV file
-with open('German_verbs.csv', newline='') as csvfile:
+# Open the tab-delimited file
+with open('German_verbs.txt', 'r') as file:
 
-    # Create a CSV reader object
-    csvreader = csv.DictReader(csvfile)
+    # Loop through each line in the file
+    for line in file:
 
-    # Loop through each row in the CSV file
-    for row in csvreader:
+        # Remove any trailing whitespace from the line
+        line = line.strip()
 
-        # Process the row as a dictionary
+        # Split the line into separate items based on the tab delimiter
+        items = line.split('\t')
+
+        # Process the items as needed
+        item1 = items[0]
+        item2 = items[1]
+        item3 = items[2]
+        item4 = items[3]
+
+        # Create a dictionary from the items
         dict = {
-            'verb': row['verb'],
-            'p': row['p'],
-            'pp': row['pp'],
-            'English': row['English']
+            'verb': item1,
+            'p': item2,
+            'pp': item3,
+            "English": item4
         }
 
         # Do something with the dictionary
