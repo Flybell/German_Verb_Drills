@@ -3,9 +3,11 @@ import random
 from verb_database import *
 
 num = 5  #number of challenges per game
-challenge_set = []
-#randomly pick from database
-challenge_set = random.sample(verbs, num)
+
+# create challenge set from database (list of dicts)
+challenge_set = [] #list of dicts
+challenge_set = random.sample(verbs, num) 
+print(challenge_set)
 
 # some repetitive functions
 def clear():
@@ -52,7 +54,7 @@ while game:
   outro()
 
   #the verb
-  print("Here's the verb: " + challenge_set[current][0])
+  print("Here's the verb: " + challenge_set[current]["verb"] + " (" + challenge_set[current]["English"] + ")")
   print("\n\n")
 
   #ask for input
@@ -61,8 +63,8 @@ while game:
              "\033[9A").strip().lower()
 
   # when correct
-  if (p == challenge_set[current][1] and pp == challenge_set[current][2]):
-    current += 1 #move to next word
+  if (p == challenge_set[current]["p"] and pp == challenge_set[current]["pp"]):
+    current += 1 #move to next challenge
     print("\n")
     print("Correct!!!!!\n")
     if current == len(challenge_set):  #reach the end
@@ -81,8 +83,8 @@ while game:
   else:
     print("\nIncorrect! Back you go!\n\n")
     print("The answers: ")
-    print(challenge_set[current][1])
-    print(challenge_set[current][2])
+    print(challenge_set[current]["p"])
+    print(challenge_set[current]["pp"])
     press("continue")
     clear()
 
@@ -92,4 +94,4 @@ while game:
     else:
       current
 
-print("Come back again to practice more verbs.\n\n\nDeveloped by Lynn Chiu with Python3 2023")
+print("Come back again to practice more verbs.\n\n\nDeveloped by Lynn Chiu with Python3, 2023")
