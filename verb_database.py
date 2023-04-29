@@ -1,30 +1,19 @@
-#verb database
-verbs = [
-  ["anfangen", "fing an", "hat angefangen"],
-  ["antworten", "antwortete", "hat geantwortet"],
-  ["arbeiten", "arbeitete", "hat gearbeitet"],
-  ["aufräumen", "räumte auf", "hat aufgeräumt"],
-  ["aufwachen", "wachte auf", "ist aufgewacht"],
-  ["aussehen", "sah aus", "hat ausgesehen"],
-  ["baden", "badete", "hat gebadet"],
-  ["beginnen", "begann", "hat begonnen"],
-  ["bekommen", "bekam", "hat bekommen"],
-  ["bestellen", "bestellte", "hat bestellt"],
-  ["besuchen", "besuchte", "hat besucht"],
-  ["bewerben", "bewarb", "hat beworben"],
-  ["bezahlen", "bezahlte", "hat bezahlt"],
-  ["bitten", "bat", "hat gebeten"],
-  ["bleiben", "blieb", "ist geblieben"],
-  ["blicken", "blickte", "hat geblickt"],
-  ["brauchen", "brauchte", "hat gebraucht"],
-  ["bringen", "brachte", "hat gebracht"],
-  ["bürsten", "bürstete", "hat gebürstet"],
-  ["danken", "dankte", "hat gedankt"],
-  ["dauern", "dauerte", "hat gedauert"],
-  ["denken", "dachte", "hat gedacht"],
-  ["diskutieren", "diskutierte", "hat diskutiert"],
-  ["drücken", "drückte", "hat gedrückt"],
-  ["duschen", "duschte", "hat geduscht"],
-  ["empfehlen", "empfahl", "hat empfohlen"],
-  ["entscheiden", "entschied", "hat entschieden"],
-]
+import csv
+
+# Open the CSV file
+with open('German_verbs.csv', newline='') as csvfile:
+
+    # Create a CSV reader object
+    csvreader = csv.DictReader(csvfile)
+
+    # Loop through each row in the CSV file
+    for row in csvreader:
+
+        # Process the row as a dictionary
+        verbs = {
+            'verb': row['verb'],
+            'p': row['p'],
+            'pp': row['pp'],
+            'English': row['English']
+        }
+
