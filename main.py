@@ -62,8 +62,7 @@ while game:
   outro()
 
   #the verb
-  print("Here's the verb: " + challenge_set[current]["verb"] + " (" + challenge_set[current]["English"] + ")")
-  print("\n")
+  print("Here's the verb: " + challenge_set[current]["verb"] + "\n (" + challenge_set[current]["English"] + ")\n")
 
   #ask for input
   p = input("What is the p?" + "\n" * 4 + "\033[3A").strip().lower()
@@ -76,7 +75,7 @@ while game:
     if current == len(challenge_set):  #reach the end
       clear()
       intro()
-      print("Congrats! You won the game! omgomg")
+      print("Congrats! You won the game!\n omgomg")
       outro()
       press("end the game")
       game = False
