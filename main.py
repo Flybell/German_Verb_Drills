@@ -1,27 +1,26 @@
 import os
 import random
-from verb_database import *
+from verbs_database import *
 
 num = 5  #number of challenges per game
 
 # create challenge set from database (list of dicts)
 challenge_set = [] #list of dicts
 challenge_set = random.sample(verbs, num) 
-print(challenge_set)
 
 # some repetitive functions
 def clear():
-  for l in range(20):
+  for l in range(12):
     print()
 
 def press(type):
-  input("\nPress enter to " + type + " ...\n\n")
+  input("\nPress enter to " + type + " ...")
 
 def intro():
-  print("\n\n\n=============================")
+  print("\n\n=============================")
 
 def outro():
-  print("=============================\n\n\n")
+  print("=============================\n\n")
 
 current = 0
 game = True
@@ -55,18 +54,16 @@ while game:
 
   #the verb
   print("Here's the verb: " + challenge_set[current]["verb"] + " (" + challenge_set[current]["English"] + ")")
-  print("\n\n")
+  print("\n")
 
   #ask for input
-  p = input("What is the p?" + "\n" * 10 + "\033[9A").strip().lower()
-  pp = input("\nWhat is the pp? (with hat or ist)" + "\n" * 10 +
-             "\033[9A").strip().lower()
+  p = input("What is the p?" + "\n" * 4 + "\033[3A").strip().lower()
+  pp = input("\nWhat is the pp? (with hat or ist)"+ "\n" * 4 + "\033[3A").strip().lower()
 
   # when correct
   if (p == challenge_set[current]["p"] and pp == challenge_set[current]["pp"]):
     current += 1 #move to next challenge
-    print("\n")
-    print("Correct!!!!!\n")
+    print("\nCorrect!!!!!\n")
     if current == len(challenge_set):  #reach the end
       clear()
       intro()
@@ -81,7 +78,7 @@ while game:
 
   # when incorrect
   else:
-    print("\nIncorrect! Back you go!\n\n")
+    print("\nIncorrect! Back you go!\n")
     print("The answers: ")
     print(challenge_set[current]["p"])
     print(challenge_set[current]["pp"])
