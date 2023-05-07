@@ -27,22 +27,21 @@ current = 0
 game = True
 
 # intro text
-intro()
-print("Welcome to the German verb game!")
-outro()
-press("continue")
-clear()
-print("This is how it works.\nI'll give you a present tense verb\nat the A1-A2 level.\n")
-print("Like so: machen\n")
-print("You will then type out the \npast tense (p) & past perfect tense (pp) \nforms in the 3rd person.\n")
-print("Like so:\nWhat is the p?\nmachte\n\nWhat is the pp? (with hat or ist)\nhat gemacht\n")
-press("continue")
-clear()
-print("If you answer correctly,\nyou'll move forward,\nbut if you get it wrong,\nyou'll have to go back one step.\n\nFinish all 5 challenges to win.\nEach time you open up the game,\nit'll be a new\nrandom set of challenges\nfrom a database of 100 words!\n"
-)
-print("\nKlingt gut? Let's do this then!\n\n")
-press("start the game")
-clear()  #refresh screen by adding lines
+#intro()
+#print("Welcome to the German verb game!")
+#outro()
+#press("continue")
+#clear()
+#print("This is how it works.\nI'll give you a present tense verb\nat the A1-A2 level.\n")
+#print("Like so: machen\n")
+#print("You will then type out the \npast tense (p) & past perfect tense (pp) \nforms in the 3rd person.\n")
+#print("Like so:\nWhat is the p?\nmachte\n\nWhat is the pp? (with hat or ist)\nhat gemacht\n")
+#press("continue")
+#clear()
+#print("If you answer correctly,\nyou'll move forward,\nbut if you get it wrong,\nyou'll have to go back one step.\n\nFinish all 5 challenges to win.\nEach time you open up the game,\nit'll be a new\nrandom set of challenges\nfrom a database of 100 words!\n")
+#print("\nKlingt gut? Let's do this then!\n\n")
+#press("start the game")
+#clear()  #refresh screen by adding lines
 
 #start game loop
 while game:
