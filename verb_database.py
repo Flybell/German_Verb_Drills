@@ -30,4 +30,4 @@ with open('German_verbs.txt', 'r') as file:
 
         # Do something with the dictionary
         verbs.append(dict)
-        print(verbs)
+        
